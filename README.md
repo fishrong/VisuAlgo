@@ -17,10 +17,10 @@
 
 ## app截图
 主界面：  
-<div align=center><img width="150" height="150" src="https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/home.png"/></div>
+<div align=center><img s src="https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/home.png"/></div>
 算法界面：  
-<div align=center><img width="150" height="150" src="https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/algo.png"/>
+<div align=center><img width="216" height="386" src="https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/algo.png"/>
 算法说明：  
-<div align=center><img width="150" height="150" src="https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/help.png"/>
+<div align=center><img width="216" height="386" src="https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/help.png"/>
 排序界面：  
-<div align=center><img width="150" height="150" src="https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/sort.png"/>
+<div align=center><img width="216" height="386" src="https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/sort.png"/>
