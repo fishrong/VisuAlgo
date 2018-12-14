@@ -137,7 +137,7 @@
         android:inputType="number"
         android:digits="0123456789 "
         android:layout_gravity="center_vertical"
-        android:hint="示例：5 7 3 8 6 2 4 9 1"
+        android:hint="@string/hint_array"
         android:theme="@style/MyLightTheme"
         android:textColorHint="#acacac"
         />

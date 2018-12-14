@@ -153,7 +153,22 @@ public class QuickActivity extends AppCompatActivity {
                 return false;
             }
         });
+        edArr.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {//排序时不可输入数组
+                Log.d(">>>>>>>>>", "onClick: edArr"+runEnd+edArr.isFocusable());
+                if (runEnd) {
+                    edArr.setFocusable(true);
+                    edArr.setFocusableInTouchMode(true);
+                }
+                else {
+                    edArr.setFocusable(false);
+                    edArr.setFocusableInTouchMode(false);
+                }
 
+                return false;
+            }
+        });
 
 
 

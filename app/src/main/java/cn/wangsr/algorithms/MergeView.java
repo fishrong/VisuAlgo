@@ -52,7 +52,15 @@ public class MergeView extends View {
     public void show(int[] a,Handler handler){//显示完成
         finished = true;
         animate = false;
-        System.arraycopy(a, 0, this.a, 0, a.length);//已排序数组，不可直接使用指针赋值
+        int[] temp = new int[a.length];
+//        Log.d(">>>>", "onClick:a:"+Arrays.toString(a));
+        for (int i = 0; i <a.length ; i++) {
+            temp[i] = a[i];
+        }
+        this.a = temp;
+//        System.arraycopy(a, 0, this.a, 0, a.length);//已排序数组，不可直接使用指针赋值
+
+//        Log.d(">>>>", "onClick:this a:"+Arrays.toString(this.a));
         handler.sendEmptyMessage(0x1234);
 
         if (MergeActivity.runAuto) {
