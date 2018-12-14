@@ -1,6 +1,7 @@
 package cn.wangsr.algorithms;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,7 +13,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -60,6 +63,22 @@ public class MergeActivity extends AppCompatActivity {
         sl_code = findViewById(R.id.sl_code);
         myView2 = findViewById(R.id.mv_2);
         final CheckBox checkBox = findViewById(R.id.checkBox);
+        edArr.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {//排序时不可输入数组
+                Log.d(">>>>>>>>>", "onClick: edArr"+runEnd+edArr.isFocusable());
+                if (runEnd) {
+                    edArr.setFocusable(true);
+                    edArr.setFocusableInTouchMode(true);
+                }
+                else {
+                    edArr.setFocusable(false);
+                    edArr.setFocusableInTouchMode(false);
+                }
+
+                return false;
+            }
+        });
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -72,6 +91,18 @@ public class MergeActivity extends AppCompatActivity {
                     checkBox.setChecked(false);
 
                 }
+            }
+        });
+
+        myView2.setOnTouchListener(new View.OnTouchListener() {//点击隐藏键盘
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {//touch代码块时关闭输入法
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm.isActive()) {
+                    imm.hideSoftInputFromWindow(v.getWindowToken(),0);
+                }
+                edArr.clearFocus();
+                return false;
             }
         });
 
@@ -122,6 +153,7 @@ public class MergeActivity extends AppCompatActivity {
                     int[] a = null;
                     try {
                         a = getArray();
+
 
                     } catch (Exception e) {
                         e.printStackTrace();
