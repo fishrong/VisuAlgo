@@ -17,10 +17,10 @@
 
 ## app截图
 主界面：  
-![主界面](https://github.com/fishrong/VisuAlgo/Screenshots/home.png)
+![主界面](https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/home.png)
 算法界面：  
-![算法界面](https://github.com/fishrong/VisuAlgo/Screenshots/algo.png)
+![算法界面](https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/algo.png)
 算法说明：  
-![算法说明](https://github.com/fishrong/VisuAlgo/Screenshots/help.png)
+![算法说明](https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/help.png)
 排序界面：  
-![算法说明](https://github.com/fishrong/VisuAlgo/Screenshots/sort.png)
+![算法说明](https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/sort.png)
