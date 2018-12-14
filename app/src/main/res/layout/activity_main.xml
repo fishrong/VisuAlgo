@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/drawer_layout"
+        tools:openDrawer="start">
+        <fragment
+            android:id="@+id/myFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="cn.wangsr.algorithms.SortingFragment"/>
+        <!--<include layout="@layout/fragment_sort"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"/>-->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_main2"
+            app:menu="@menu/activity_main2_drawer" />
+
+    </android.support.v4.widget.DrawerLayout>
+    <!--<fragment-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/myFragment"-->
+        <!--android:name="cn.wangsr.algorithms.SortingFragment"/>-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="bottom"-->
+        <!--android:background="@drawable/stroke_grey"-->
+        <!--android:layout_alignParentBottom="true">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_sort"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:drawableTop="@drawable/tab_sort_2"-->
+            <!--android:textAlignment="center"-->
+            <!--android:drawableTint="@color/tab_bar"-->
+            <!--android:textColor="@color/tab_bar"-->
+            <!--android:text="排序" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/tv_tree"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:drawableTop="@drawable/tab_tree"-->
+            <!--android:textAlignment="center"-->
+            <!--android:drawableTint="@color/tab_bar"-->
+            <!--android:textColor="@color/tab_bar"-->
+            <!--android:text="查找" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/tv_net"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:drawableTop="@drawable/tab_net"-->
+            <!--android:textAlignment="center"-->
+            <!--android:drawableTint="@color/tab_bar"-->
+            <!--android:textColor="@color/tab_bar"-->
+            <!--android:text="图" />-->
+    <!--</LinearLayout>-->
+
+
+
+
+</RelativeLayout>

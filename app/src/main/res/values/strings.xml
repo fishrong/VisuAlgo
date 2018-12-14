@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">Algorithms</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Algorithms</string>
+    <string name="nav_header_subtitle">www.wangsr.cn</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="actionbar_help_selection">
+        选择排序：首先，找到数组中最小的那个元素，其次，将它和数组的第一个元素交换位置。再次，在剩余的元素中找到最小的元素，
+        将它和数组的第二个元素交换位置。如此往复，直到整个数组排序。
+    </string>
+    <string name="actionbar_help_insertion">
+        插入排序：依次遍历数组元素，如果当前遍历的元素比前一个元素小（第一个元素和自己比较）则与前一个元素交换位置，交换位置后如果前一个还是比自己大
+        则继续交换位置，直到前一个元素比自己小。与玩扑克牌原理类似，每抽一张牌总是会把它从小到大排列好。
+    </string>
+
+    <string name="actionbar_help_shell">希尔排序：是一种基于插入排序的快速排序算法。排序思想是使数组中任意间隔为h的元素都是有序的，
+    h很大时，可以将元素移到很远的地方，h为1时，即为插入排序。选择合适的h可以有效解决对于大规模乱序数组插入排序慢问题。</string>
+    <string name="actionbar_help_merge">
+        归并排序：如果数组左右两半分别都是有序的那么就可以把它们归并成一个大的有序数组。利用递归的思想，从把数组分成两半归并一直递归到归并两个元素（两个元素进行归并可以排序），即可
+        完成数组的排序。\n
+        归并思想：进行归并前需要将数组复制到辅助数组，排序比较时从辅助数组中取值放到原数组中。首先，比较左右两半的第一个元素，取较小的一个，然后取了元素的那一半索引加一继续和另一半的第一个元素比较，取较小
+        的元素且取了值的那半索引加一，左边取完取右边，右边取完取左边，如此循环直到数组排序完成。
+    </string>
+
+
+    <string name="code_merge">
+        public static void sort(int[] a){\n
+        \t\t\t\tint[] aux = new int[a.length];\n
+        \t\t\t\tsort(a,0,a.length-1);\n
+        }\n
+        public static void sort(int[] a,int lo,int hi){\n
+        \t\t\t\t    if(hi&lt;=lo) retrun;\n
+        \t\t\t\t    int mid = lo + (hi-lo)/2;\n
+        \t\t\t\t    sort(a,lo,mid);\n
+        \t\t\t\t    sort(a,mid+1,hi);\n
+         \t\t\t\t   merge(a,lo,mid,hi);\n
+        }\n
+        public static void merge(int[] a,int lo,int mid,int hi){\n
+        \t\t\t\t    int i = lo,j=mid+1;\n
+        \t\t\t\t    for (int k = lo; k &lt;=hi; k++) {\n
+         \t\t\t\t       aux[k] = a[k];\n
+         \t\t\t\t   }\n
+         \t\t\t\t   for (int k = lo;k&lt;=hi;k++){\n
+          \t\t\t\t      if (i>mid) a[k] = aux[j++];\n
+          \t\t\t\t      else if (j>hi) a[k] = aux[i++];\n
+          \t\t\t\t      else if (aux[i]>aux[j]) a[k] = aux[j++];\n
+           \t\t\t\t     else a[k] = aux[i++];\n
+          \t\t\t\t  }\n
+        }\n
+    </string>
+    <string name="code_quick"><![CDATA[
+        public static void sort(int[] a){\n
+        \t\t\t\t    sort(a,0,a.length-1);\n
+        }\n
+        public static void sort(int[] a,int lo,int hi){\n
+        \t\t\t\t    if (hi<=lo) return;\n
+        \t\t\t\t    int j = partition(a,lo,hi);\n
+        \t\t\t\t    sort(a,lo,j-1);\n
+        \t\t\t\t    sort(a,j,hi);\n
+        }\n
+        public static int partition(int[] a,int lo,int hi){\n
+        \t\t\t\t    int i = lo,j = hi + 1;\n
+        \t\t\t\t    int v = a[lo];\n
+        \t\t\t\t    while(true){\n
+        \t\t\t\t\t\t\t\t        while(a[++i]<v) if(i==hi) break;\n
+        \t\t\t\t\t\t\t\t        while(a[- -j]<v) if(j==lo) break;\n
+        \t\t\t\t\t\t\t\t        if(i>=j) break;\n
+        \t\t\t\t\t\t\t\t        swap(a[i],a[j]);\n
+        \t\t\t\t    }\n
+        \t\t\t\t    swap(a[lo],a[j]);\n
+        \t\t\t\t    return j;\n
+        }\n
+
+    ]]></string>
+    <string name="actionbar_help_quick">
+        快速排序：将数组分成左右两个子数组，对其进行切分，使得切分后左子数组元素不大于切分元素（一般指定第一个元素为切分元素），
+        右子数组元素不小于切分元素。然后递归调用切分直到数组排序。\n
+        切分规则：首先，选取切分元素a[lo],然后从左往右扫描数组直到找到一个大于等于切分元素的数（这个数的索引为左指针），
+        从右往左扫描直到找到一个小于等于切分元素的数（这个数的索引为右指针）。
+        交换这两个元素。继续扫描直到右指针大于等于左指针。
+    </string>
+</resources>

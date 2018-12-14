@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appBar"
+
+        android:background="#e8e9e9"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/stroke_item"
+            android:elevation="3dp"
+            android:gravity="center_vertical"
+            android:onClick="launchSelectionActivity">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="#e591d7dc"
+                android:gravity="center_vertical"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:text="Select"
+                android:textAlignment="center"
+                android:textColor="@color/White"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="选择排序"
+                android:textSize="23sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/stroke_item"
+            android:elevation="3dp"
+            android:gravity="center_vertical"
+            android:onClick="launchInsertionActivity">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="#e891dcad"
+                android:gravity="center_vertical"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:text="Insert"
+                android:textAlignment="center"
+                android:textColor="@color/White"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="插入排序"
+                android:textSize="23sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/stroke_item"
+            android:elevation="3dp"
+            android:gravity="center_vertical"
+            android:onClick="launchShellActivity">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="#e8dc9191"
+                android:gravity="center_vertical"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:text="Shell"
+                android:textAlignment="center"
+                android:textColor="@color/White"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="希尔排序"
+                android:textSize="23sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/stroke_item"
+            android:elevation="3dp"
+            android:gravity="center_vertical"
+            android:onClick="launchMergeActivity">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="#e8dcc991"
+                android:gravity="center_vertical"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:text="Merge"
+                android:textAlignment="center"
+                android:textColor="@color/White"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="归并排序"
+                android:textSize="23sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/stroke_item"
+            android:elevation="3dp"
+            android:gravity="center_vertical"
+            android:onClick="launchQuickActivity">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="#e8dc91d6"
+                android:gravity="center_vertical"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:text="Quick"
+                android:textAlignment="center"
+                android:textColor="@color/White"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="快速排序"
+                android:textSize="23sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

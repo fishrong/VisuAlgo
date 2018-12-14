@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_1"
+    tools:context=".ShellActivity"
+    tools:ignore="InvalidId"
+    android:orientation="vertical"
+    style="@style/MyLightTheme"
+    android:layout_gravity="center">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_below="@id/appBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        >
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            >
+
+            <TextView
+                style="@style/MyLightTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/tag_rect_cyan"
+                android:text="：未排序" />
+
+            <TextView
+                style="@style/MyLightTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:drawableLeft="@drawable/tag_rect_green"
+                android:text="：当前值" />
+
+            <TextView
+                style="@style/MyLightTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:drawableLeft="@drawable/tag_rect_orange"
+                android:text="：已完成" />
+        </LinearLayout>
+
+        <cn.wangsr.algorithms.MyView
+            android:id="@+id/mv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp" />
+
+        <ScrollView
+            android:id="@+id/sl_code"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:padding="10dp"
+            android:background="@drawable/stroke_blue"
+            android:scrollbars="vertical">
+            <LinearLayout
+                android:id="@+id/ll_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_l1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\t\t\t\t int N = a.length,    h = 1;"
+                    android:textColor="@color/White"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_l3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="\t\t\t\t while(h &lt; N/3) h = h*3 + 1"
+                    android:textColor="@color/White"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_l4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="\t\t\t\t while(h &gt;=1 ){"
+                    android:textColor="@color/White"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_l5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\t\t\t\t\t\t for (int i=h;i &lt;N;i++){"
+                    android:textColor="@color/White"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_l6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\t\t\t\t       for (int j = i;j &gt;h &amp;&amp; a[j] &lt; a[j-1]; j-=h)"
+                    android:textColor="@color/White"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_l7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\t\t\t\t               swap(a[j],a[j-1]);"
+                    android:textColor="@color/White"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_l8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\t\t\t\t\t\t }"
+                    android:textColor="@color/White"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_l9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="\t\t\t\t\t\t h = h/3;"
+                    android:textColor="@color/White"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_l10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\t\t\t\t }"
+                    android:textColor="@color/White"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <EditText
+            android:id="@+id/edArr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:digits="0123456789 "
+            android:hint="示例：5 7 3 8 6 2 4 9 1"
+            android:inputType="number"
+            android:padding="10dp"
+            android:textColorHint="#acacac"
+            android:textSize="20sp"
+            android:theme="@style/MyLightTheme" />
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/checkAuto"
+                style="@style/MyLightTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="自动" />
+
+            <RadioButton
+                android:id="@+id/checkstep"
+                style="@style/MyLightTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手动" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_btn_run_rect"
+                android:onClick="runShell"
+                android:text="RUN"
+                android:textColor="@color/textcolor_btn"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/ll_help"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        android:padding="50dp">
+        <TextView
+            android:id="@+id/tv_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stroke_blue"
+            android:textColor="@color/White"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:text="@string/actionbar_help_shell"/>
+    </LinearLayout>
+</RelativeLayout>

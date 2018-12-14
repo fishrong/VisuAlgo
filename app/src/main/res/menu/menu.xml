@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/code"
+        android:title="显示代码"
+        android:icon="@drawable/ic_menu_code"
+        app:showAsAction="always">
+
+    </item>
+    <item android:id="@+id/help"
+        android:title="帮助"
+        android:icon="@drawable/icon_help"
+        app:showAsAction="ifRoom">
+
+    </item>
+    <item android:id="@+id/setting"
+        android:title="设置"
+        android:icon="@drawable/ic_menu_setting"
+        app:showAsAction="ifRoom">
+    </item>
+
+</menu>
