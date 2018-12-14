@@ -3,13 +3,12 @@ package cn.wangsr.algorithms;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,11 +25,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Arrays;
-
 public class ShellActivity extends AppCompatActivity {
     private Button btn1;
-    private MyView myView;
+    private ShellView myView;
     private TextView tv_l4;
     private TextView tv_l5;
     private TextView tv_l6;
@@ -100,7 +97,7 @@ public class ShellActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        myView = findViewById(R.id.mv_1);
+        myView = findViewById(R.id.mv_shell);
         btn1 = findViewById(R.id.btn_1);
         tv_l4 = findViewById(R.id.tv_l4);
         tv_l5 = findViewById(R.id.tv_l5);
@@ -180,20 +177,20 @@ public class ShellActivity extends AppCompatActivity {
         while (h>=1) {
             handler.sendEmptyMessage(0x00a);
             myView.h = h;
-            MyView.show(myView, -1, -1, -1, handler);
+            ShellView.show(myView, -1, -1, -1, handler);
             for (int i = h; i < N; i++) {
                 handler.sendEmptyMessage(0x00b);
                 for (int j = i; j < N & j >= h; j-=h) {
                     handler.sendEmptyMessage(0x00c);
-                    MyView.show(myView, j - h, j, -1, handler);
+                    ShellView.show(myView, j - h, j, -1, handler);
                     if (a[j] > a[j - h]) break;
                     int temp = a[j];
                     a[j] = a[j - h];
                     a[j - h] = temp;
                     handler.sendEmptyMessage(0x00d);
-                    MyView.show(myView, j - h, j, -1, handler);
+                    ShellView.show(myView, j - h, j, -1, handler);
                 }
-                MyView.show(myView, i, -1, i, handler);
+                ShellView.show(myView, i, -1, i, handler);
             }
             h = h/3;
             handler.sendEmptyMessage(0x00e);
@@ -259,7 +256,7 @@ public class ShellActivity extends AppCompatActivity {
             if (msg.what == 2) btn1.setEnabled(false);
             else if (msg.what == 3) {
                 btn1.setEnabled(true);
-                Toast.makeText(ShellActivity.this, "排序完成", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ShellActivity.this, "排序完成", Toast.LENGTH_SHORT).show();
             }
             if (msg.what == 0x00a) {
                 tv_l4.setBackgroundColor(0xffff6600);

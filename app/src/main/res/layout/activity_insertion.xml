@@ -58,7 +58,7 @@
             style="@style/MyLightTheme"
             android:text="：已完成"/>
     </LinearLayout>
-    <cn.wangsr.algorithms.MyView
+    <cn.wangsr.algorithms.InsertionView
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:id="@+id/mv_1"/>

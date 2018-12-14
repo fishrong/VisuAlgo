@@ -2,17 +2,16 @@ package cn.wangsr.algorithms;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -23,7 +22,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Arrays;
@@ -36,10 +34,10 @@ public class MergeActivity extends AppCompatActivity {
     private EditText edArr;
     private LinearLayout ll_setting;
     private ScrollView sl_code;
-    private MyView2 myView2;
+    private MergeView myView2;
 
     public static boolean runAuto = true;
-    public static boolean runEnd = true;
+    public  boolean runEnd = true;
     public static boolean nextStep = true;
     private CharSequence checkedStr = "自动";
 
@@ -112,6 +110,7 @@ public class MergeActivity extends AppCompatActivity {
         btn_run.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(">>>>>", "onClick: runEnd"+runEnd);
                 if (edArr.isFocused()) edArr.clearFocus();//开始排序后，输入框失去焦点
 
                 if (checkedStr.equals("自动")) {
@@ -210,7 +209,7 @@ public class MergeActivity extends AppCompatActivity {
             if (msg.what == 2) btn_run.setEnabled(false);
             else if (msg.what == 3) {
                 btn_run.setEnabled(true);
-                Toast.makeText(MergeActivity.this, "排序完成", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MergeActivity.this, "排序完成", Toast.LENGTH_SHORT).show();
             }
             if (msg.what==0x1234) myView2.invalidate();
         }

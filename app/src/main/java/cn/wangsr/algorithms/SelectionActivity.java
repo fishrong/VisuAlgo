@@ -1,23 +1,15 @@
 package cn.wangsr.algorithms;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.method.KeyListener;
-import android.text.method.NumberKeyListener;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -37,7 +29,7 @@ import android.widget.Toast;
  */
 public class SelectionActivity extends AppCompatActivity {
     private Button btn1;
-    private MyView myView;
+    private SelectionView myView;
     private TextView forI;
     private TextView forJ;
     private TextView minI;
@@ -59,7 +51,7 @@ public class SelectionActivity extends AppCompatActivity {
             if (msg.what==2) btn1.setEnabled(false);
             else if(msg.what==3) {
                 btn1.setEnabled(true);
-                Toast.makeText(SelectionActivity.this,"排序完成",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SelectionActivity.this,"排序完成",Toast.LENGTH_SHORT).show();
             }
             if (msg.what==0x00a) {
                 forI.setBackgroundColor(0xffff6600);
@@ -113,7 +105,7 @@ public class SelectionActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
 //            actionBar.setDisplayShowTitleEnabled(false);
         }
-        myView = findViewById(R.id.mv_1);
+        myView = findViewById(R.id.mv_selection);
         btn1 = findViewById(R.id.btn_1);
         forI = findViewById(R.id.tv_l1);
         minI = findViewById(R.id.tv_l2);
@@ -238,6 +230,7 @@ public class SelectionActivity extends AppCompatActivity {
      * @param view
      */
     public void runSelection(View view) {
+        Log.d(">>>>>", "onClick: runEnd"+runEnd);
         if (edArr.isFocused()) edArr.clearFocus();
         edArr.clearFocus();
         if (checkedStr.equals("自动")) {
@@ -280,27 +273,27 @@ public class SelectionActivity extends AppCompatActivity {
     private void sort(int[] a){
         int N = a.length;
         myView.a = a;
-        MyView.show(myView,-1,-1,-1,handler);
+        SelectionView.show(myView,-1,-1,-1,handler);
         for (int i = 0; i < N; i++) {
             handler.sendEmptyMessage(0x00a);
             int min = i;
             handler.sendEmptyMessage(0x00b);
             myView.min = min;
-            MyView.show(myView,min,-1,-1,handler);
+            SelectionView.show(myView,min,-1,-1,handler);
             for (int j = i+1; j < N; j++) {
                 handler.sendEmptyMessage(0x00c);
-                MyView.show(myView,min,j,-1,handler);
+                SelectionView.show(myView,min,j,-1,handler);
                 if (a[j]<a[min]) {
                     min = j;
                     handler.sendEmptyMessage(0x00d);
-                    MyView.show(myView, min, -1, -1,handler);
+                    SelectionView.show(myView, min, -1, -1,handler);
                 }
             }
             int temp = a[i];
             a[i] = a[min];
             a[min] = temp;
             handler.sendEmptyMessage(0x00e);
-            MyView.show(myView,min,-1,i,handler);
+           SelectionView.show(myView,min,-1,i,handler);
 
         }
     }

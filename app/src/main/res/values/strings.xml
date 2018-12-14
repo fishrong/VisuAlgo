@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Algorithms</string>
+    <string name="app_name">VisuAlgo</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -84,5 +84,14 @@
         切分规则：首先，选取切分元素a[lo],然后从左往右扫描数组直到找到一个大于等于切分元素的数（这个数的索引为左指针），
         从右往左扫描直到找到一个小于等于切分元素的数（这个数的索引为右指针）。
         交换这两个元素。继续扫描直到右指针大于等于左指针。
+    </string>
+    <string name="about">
+        此项目仅对一些经典算法进行了可视化的实现，注重的是算法的运行过程，没有对其性能优劣进行体现。目前项目仍在完善中，欢迎交流指正。
+        \n
+        \n
+        \n
+        \n
+       项目地址：https://github.com/fishrong/VisuAlgo
+
     </string>
 </resources>

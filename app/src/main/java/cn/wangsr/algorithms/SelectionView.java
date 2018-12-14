@@ -1,19 +1,15 @@
 package cn.wangsr.algorithms;
 
-import android.app.Activity;
-import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 
-
-public class MyView extends View {
+public class SelectionView extends View {
     public int[] a=getResources().getIntArray(R.array.initArray);
     public int min = -1;
     public int currentIndex = -1;
@@ -22,7 +18,7 @@ public class MyView extends View {
     public int h=1;
     private int iTemp = -1;
     public int minColor = 0xff666666;
-    public static void show(MyView myView, int min, int currentIndex, int finished, Handler handler){
+    public static void show(SelectionView myView, int min, int currentIndex, int finished, Handler handler){
         myView.min = min;
         myView.currentIndex = currentIndex;
         myView.finished = finished;
@@ -47,11 +43,11 @@ public class MyView extends View {
         }
 
     }
-    public MyView(Context context) {
+    public SelectionView(Context context) {
         super(context);
     }
 
-    public MyView(Context context, AttributeSet attrs) {
+    public SelectionView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

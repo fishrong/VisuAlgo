@@ -63,10 +63,10 @@
             style="@style/MyLightTheme"
             android:text="：已完成"/>
     </LinearLayout>
-    <cn.wangsr.algorithms.MyView
+    <cn.wangsr.algorithms.SelectionView
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:id="@+id/mv_1"/>
+        android:id="@+id/mv_selection"/>
 
     <LinearLayout
         android:id="@+id/ll_code"

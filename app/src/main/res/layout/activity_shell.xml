@@ -68,8 +68,8 @@
                 android:text="：已完成" />
         </LinearLayout>
 
-        <cn.wangsr.algorithms.MyView
-            android:id="@+id/mv_1"
+        <cn.wangsr.algorithms.ShellView
+            android:id="@+id/mv_shell"
             android:layout_width="wrap_content"
             android:layout_height="200dp" />
 

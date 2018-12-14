@@ -6,13 +6,10 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
-import java.util.Arrays;
 
-
-public class MyView2 extends View {
+public class MergeView extends View {
     public int[] a=getResources().getIntArray(R.array.initArray);
     private  int lo,hi,k;
     public int mergeStart=-1;
@@ -88,7 +85,7 @@ public class MyView2 extends View {
             else if (xLength > 0) x -= ((float)Math.abs(xLength))/50f;
             else x += ((float)Math.abs(xLength))/50f;
             handler.sendEmptyMessage(0x1234);
-            threadSleep(20);
+            threadSleep(15);
         }
 
         if (MergeActivity.runAuto) {
@@ -102,11 +99,11 @@ public class MyView2 extends View {
         }
 
     }
-    public MyView2(Context context) {
+    public MergeView(Context context) {
         super(context);
     }
 
-    public MyView2(Context context, AttributeSet attrs) {
+    public MergeView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

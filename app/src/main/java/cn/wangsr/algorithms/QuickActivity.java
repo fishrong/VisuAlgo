@@ -5,17 +5,14 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.style.AbsoluteSizeSpan;
-import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.util.Log;
@@ -24,19 +21,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowInsets;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Arrays;
 
 /**
  * 快速排序
@@ -57,7 +50,7 @@ public class QuickActivity extends AppCompatActivity {
     private Button btn_run;
     private Button btn_run_circle;
     public static boolean runAuto = true;
-    public static boolean runEnd = true;
+    public  boolean runEnd = true;
     public static boolean nextStep = true;
     private CharSequence checkedStr = "自动";
     @SuppressLint("ClickableViewAccessibility")
@@ -418,7 +411,7 @@ public class QuickActivity extends AppCompatActivity {
             else if (msg.what == 0x1233) {
                 btn_run.setEnabled(true);
                 btn_run_circle.setEnabled(true);
-                Toast.makeText(QuickActivity.this, "排序完成", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(QuickActivity.this, "排序完成", Toast.LENGTH_SHORT).show();
             }
             if (msg.what==0x1234) quickView.invalidate();
             else{
