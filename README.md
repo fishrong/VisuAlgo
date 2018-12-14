@@ -27,3 +27,4 @@
 </div>  
 排序界面：  
 <div align=center><img width="216" height="386" src="https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/sort.png"/>
+<div align=center><img width="216" height="386" src="https://github.com/fishrong/VisuAlgo/raw/master/Screenshots/sort.gif"/>
